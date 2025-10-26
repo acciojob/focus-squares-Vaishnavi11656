@@ -1,22 +1,23 @@
 //your JS code here. If required.
-const square = document.querySelectorAll(".square")
-for(let square of squares){
-	square.addEventListener("mouseover",(e)=>addBgcolor(e))
-	square.addEventListener("mouseout",(e)=>addDefaultBgColor(e))													
+const squares = document.querySelectorAll(".square");
+
+for (let square of squares) {
+  square.addEventListener("mouseover", (e) => addBgColor(e));
+  square.addEventListener("mouseout", () => addDefaultBgColor());
 }
 
-function addBgcolor(e){
-	console.log(e.target.id)
-	for(let i = 0 ; i<squares.length;i++){
-		if(squares[i] !== e.target.id){
-			squares[i].style.backgroundcolor = "#E6E6FA"
-		}
-	}
-		}
+function addBgColor(e) {
+  for (let sq of squares) {
+    if (sq !== e.target) {
+      sq.style.backgroundColor = "#6F4E37"; // Coffee
+    } else {
+      sq.style.backgroundColor = "#E6E6FA"; // Keep Lavender on hovered one
+    }
+  }
+}
 
-
-function addDefaultBgColor(){
-		for(let square of squares){
-			square.style.backgroundColor = "#E6E6FA"
-		}
+function addDefaultBgColor() {
+  for (let sq of squares) {
+    sq.style.backgroundColor = "#E6E6FA"; // Reset to Lavender
+  }
 }
