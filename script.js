@@ -5,14 +5,15 @@ for(let square of squares){
 	square.addEventListener("mouseout",(e)=>addDefaultBgColor(e))													
 }
 
-function addBgcolor(){
-	const selectedBoxID = e.targert.id
-	for(let i =0;i<square.length;i++){
-		if(square[i].id !== selectedBoxID){
-			square[i],style.backgroundColor = "#6F4E37"
+function addBgcolor(e){
+	console.log(e.target.id)
+	for(let i = 0 ; i<squares.length;i++){
+		if(squares[i] !== e.target.id){
+			squares[i].style.backgroundcolor = "#E6E6FA"
 		}
 	}
-}
+		}
+
 
 function addDefaultBgColor(){
 		for(let square of squares){
